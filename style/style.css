@@ -1,0 +1,209 @@
+body {
+		margin: 0;padding: 1rem;font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;color: #666;
+}
+
+h1 {
+	text-align: center;
+	width: 100%;
+}
+
+header {
+	width: 100%;
+	height: 15rem;
+	position: fixed;
+	top: 0;
+	padding: 0 2rem 0 0;
+	display: flex;
+	flex-wrap: wrap;	
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	z-index: 1;
+
+}
+
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 15rem 0;
+}
+
+input[type='search'] {
+	width: 20% !important;
+}
+
+.popup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 100vh;
+	width: 100vw;
+	background-color: black;
+	opacity: 0.9;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+.popup-content {
+	min-height: 30vh;
+	width: 50vw;
+	background-color: white;
+	padding: 1rem;
+}
+
+.playlist {
+	width: 30%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.8;
+}
+
+.playlist:hover {
+	opacity: 1;
+}
+
+.playlist-name {
+	width: 100%;
+	text-align: center;
+}
+
+.playlistImage {
+	position: relative;
+	height: 10rem;
+	width: 10rem;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+}
+
+.playlist-play-btn {
+	position: absolute;
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+}
+
+.playlist-edit-btn {
+	position: absolute;
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	top: 85%;
+	left: 65%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background-color: green;
+	color: white;
+}
+
+.playlist-delete-btn {
+	position: absolute;
+	display: none;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	top: 85%;
+	left: 35%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background-color: red;
+	color: white;
+}
+
+.visible {
+	display: flex;
+}
+
+.next {
+	margin: 1rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.add {
+	margin-bottom: 1rem;
+	display: block;
+}
+
+.player {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.player h4 {
+	width: 100%;
+}
+
+.player audio {
+	width: 100%;
+}
+
+.spinnig {
+	animation: spin1 5s infinite linear;
+}
+
+.strong {
+	font-weight: 700;
+}
+
+@keyframes spin1 {
+0% { transform: rotate(0deg);}
+100% { transform: rotate(360deg);}
+}
+
+@media only screen and (max-width: 1000px) {
+	.playlist {
+		width: 100%;
+	}
+
+	header button {
+		width: 100% !important;
+	}
+
+	header input[type='search']  {
+		width: 100% !important;
+	}
+
+}
+
+@media only screen and (max-width: 400px) {
+	.popup-content {
+		width: 70vw;
+	}
+
+	main {
+		margin-top: 20rem;
+	}
+
+	input {
+		margin-top: 1rem;
+	}
+}

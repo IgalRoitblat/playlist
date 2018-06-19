@@ -1,0 +1,38 @@
+POST http://localhost:8888/playlist/api/playlist
+
+{
+	"name": "Static & Ben El",
+	"image": "../playlist_images/BenEl_192x752.jpg",
+	"songs": [
+		{
+			"name": "Static & Ben El - Namaste.mp3",
+			"url": "https://drive.google.com/open?id=19H3vHUe3-Kz8VaMWnj-38BmVf0xQR8gf"
+		},
+		{
+			"name": "Static & Ben El - Kawai.mp3",
+			"url": "https://drive.google.com/open?id=1bEht7Qv0oq8pFURA3-xerfEjMxuOyJ5U"
+		},
+		{
+			"name": "Static & Ben El - Barbie.mp3",
+			"url": "https://drive.google.com/open?id=15zeWo6anSQTkQBOQ4pSK0_elTcWDcKuR"
+		}
+	]
+}
+
+
+POST http://localhost:8888/playlist/api/playlist
+
+{
+	"name": "Britney Spears",
+	"image": "../playlist_images/britney-spears-babay-one-more-time-1297269172-list-handheld-0.jpg",
+	"songs": [
+		{
+			"name": "Britney Spears - Work Bitch.mp3",
+			"url": "https://drive.google.com/open?id=11FwgrXe6k4aNcCaNmbm2PtIBPAEUNRm9"
+		},
+		{
+			"name": "Britney Spears - Baby One More Time.mp3",
+			"url": "https://drive.google.com/open?id=1BDFOQSdlwQ3iL4s2oJP28nU0P5B4HC07"
+		}
+	]
+}

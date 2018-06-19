@@ -1,0 +1,55 @@
+<h3>Edit Playlist</h3>
+<div class="formContainer">
+	<form id="edit_playlist_form">
+		<label>
+			<span>Playlist Name</span>
+			<input type="text" name="playlistName" required>
+		</label>
+		<label>
+			<span>Cover Photo URL</span>
+			<input type="text" name="playlistImage" required>
+		</label>
+		<div id="preview"></div>
+		<input class="btn waves-effect waves-light" type="submit" name="submit" value="Next">
+		<input class="btn waves-effect waves-light blue" type="button" name="cancel" value="Cancel">
+	</form>
+</div>
+<script type="text/javascript">
+	$("input[name='playlistImage']").change(showPreview);
+	$("input[name='playlistName']").val(popup.data.name);
+	$("input[name='playlistImage']").val(popup.data.image);
+	$("input[name='cancel']").click(() => {
+		$(".popup").remove();
+		renderMainView();
+	})
+
+	$("#edit_playlist_form").submit(onFormSubmit);
+
+
+	function onFormSubmit(event) {
+		event.preventDefault();
+
+		var data = {};
+
+		data['name'] = $("input[name='playlistName']").val();
+		data['image'] = $("input[name='playlistImage']").val();
+
+		popup.edit('api/playlist/' + popup.data.id, data);
+
+		popup = new SubmittablePopup('popups/edit_songs.html', popup.data);
+
+	}
+
+	function showPreview() {
+		$("#preview").empty();
+		$("#preview").append(
+			$("<h4>", {text: "Preview"}),
+			$("<div>", { height: "50%", width: "50%"}).css({
+				'background-image': 'url(' + $("input[name=playlistImage]").val() + ')',
+				'background-size': 'cover',
+				'background-position': 'center'
+
+			}).css({"margin": "1rem", "border-radius": "50%", "height": "10rem", "width": "10rem"})
+		)
+	}
+</script>

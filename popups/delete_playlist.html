@@ -1,0 +1,17 @@
+<h3>Delete Playlist</h3>
+<div class="formContainer">
+	<p>Are you sure you want to delete?</p>
+	<input class="btn waves-effect waves-light red" type="button" name="delete" value="Delete">
+	<input class="btn waves-effect waves-light blue" type="button" name="cancel" value="Cancel">
+</div>
+<script type="text/javascript">
+	$("input[name='delete']").click(() => {
+		popup.delete();
+		$(".popup").remove();
+		renderMainView();
+	});
+	$("input[name='cancel']").click(() => {
+		$(".popup").remove();
+		renderMainView();
+	})
+</script>
